@@ -1,0 +1,47 @@
+@import './global';
+
+
+.conatiner {
+    @include full();
+}
+.page {
+    @include full();
+    @include flex(flex-start, flex-start, $fd: column);
+    padding: 5rem 2rem;
+    gap: 1rem;
+    h1 {
+        font-size: 4rem;
+        line-height: normal;
+        // margin-bottom: 0.5rem;
+        span {
+            color: $primary;
+        }
+    }
+    p {
+        text-align: justify;
+        width: 40%;
+        font-size: 1.15rem;
+    }
+    .cards {
+        @include flex;
+        gap: 1.5rem;
+        .card {
+            padding-left: 0.5rem;
+            margin-top: 0.5rem;
+            width: 8rem;
+            height: 8rem;
+            border-radius: 10px;
+            background-color: #dedede;
+            // background-color: rgb(0, 0, 65);
+            text-align: left;
+            @include flex();
+            font-size: 0.8rem;
+            font-weight: 700;
+            h2 {
+                span {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}

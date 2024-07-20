@@ -1,0 +1,48 @@
+@import './global';
+
+.navbar {
+    @include full($h: 4rem);
+    @include flex(space-between);
+    // background: #ffffff;
+    padding: 0rem 2rem;
+    .logo {
+        h1 {
+            font-size: 2rem;
+            font-family: sans-serif;
+
+        }
+    }
+    .list {
+        width: fit-content;
+        ul {
+            @include flex(flex-start, flex-start);
+            list-style: none;
+            gap: 1.5rem;
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-size: 1.5rem;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    width: 0%;
+                    height: 100%;
+                    border-bottom: 2px solid $primary;
+                    transition: .3s all cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+                &:hover {
+                    cursor: pointer;
+                    color: $primary;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+                li {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
